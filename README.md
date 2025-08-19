@@ -4,6 +4,7 @@ A very simple, memory efficient (and badly written) plotting library for c
 - simple Plots without the need to store all values in (huge) arrays and having to iterate over them again to plot them
 - title/axis labelling
 - automatic axis scaling
+- saving Plots as compact .pbm image
 - segfault proof (hopefully)
 - all conveniently inside a single header
 ## USAGE
@@ -27,3 +28,5 @@ savePlot(Plot *p);
 You can change the ```#define WIDTH``` and ```#define HEIGHT``` at the top of the header.
 
 Note that the width should be a multiple of 8.
+## EXAMPLE
+![](https://github.com/user-attachments/assets/601c2c14-41d9-436c-b8f6-4868a7a0caaa)
