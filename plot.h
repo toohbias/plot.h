@@ -74,6 +74,10 @@ Plot initPlot(
         y_scale *= 1E3;
         y_range *= 1E3;
     }
+    while(y_range >= 2000.0) {
+        y_scale *= 1E-3;
+        y_range *= 1E-3;
+    }
     double y_ticks[5];
     double y_step = (y_max - y_min) / 4;
     for(int i = 0; i < 5; i++) {
