@@ -131,7 +131,6 @@ void setYTicks(Plot *p, double *y_ticks, int size, double scale) {
     if(!y_ticks) { return; }
     for(int i = 0; i < size; i++) {
         int y = ((*(y_ticks + i) - p->y_max) / (p->y_min - p->y_max)) * HEIGHT + TOPSPACING;
-        if(y == -1) { return; }
         int x = (LEFTSPACING / 8) - 1;
         p->canvas[y][x] = 0b00111111;
 
@@ -151,7 +150,6 @@ void setXTicks(Plot *p, double *x_ticks, int size, double scale) {
     for(int i = 0; i < size; i++) {
         int y_p = IMGHEIGHT - BOTTOMSPACING + 1;
         int x_char = ((*(x_ticks + i) - p->x_min) / (p->x_max - p->x_min)) * WIDTH + LEFTSPACING;
-        if( x_char == -1) { return; }
         int x_p = x_char / 8;
         int pos = 7 - x_char % 8;
         uint8_t flag = 1 << pos;
