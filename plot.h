@@ -160,7 +160,7 @@ void setXTicks(Plot *p, double *x_ticks, int size, double scale) {
         char buffer[6];
         int ret = snprintf(buffer, 6, "%g", *(x_ticks + i) * scale);
         if(ret >= sizeof(buffer)) { buffer[0] = '0'; buffer[1] = '\0';}
-        int offset = strlen(buffer) / 2;
+        int offset = (strlen(buffer) - 1) / 2;
         offset += (pos + 1) / 8;
         pos = (pos + 1) % 8;
         if(strlen(buffer) % 2 != 0) {
